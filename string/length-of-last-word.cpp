@@ -9,10 +9,9 @@ public:
         }
         while (s[current] != ' ') {
             count++;
-            current--;
-            if (current == 0) {
-    break;
-}
+            if (current > 0) {
+                current--;
+            }
         }
         return count;
     }
