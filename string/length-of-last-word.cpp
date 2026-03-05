@@ -10,6 +10,9 @@ public:
         while (s[current] != ' ') {
             count++;
             current--;
+            if (current == 0) {
+    break;
+}
         }
         return count;
     }
