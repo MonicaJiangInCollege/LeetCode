@@ -12,6 +12,9 @@ public:
             if (current > 0) {
                 current--;
             }
+            if (current == 0) {
+                return count;
+            }
         }
         return count;
     }
