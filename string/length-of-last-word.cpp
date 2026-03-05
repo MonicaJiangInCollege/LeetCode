@@ -7,14 +7,9 @@ public:
         while (s[current] == ' ') {
             current--;
         }
-        while (s[current] != ' ') {
+        while ((current>=0)&&(s[current] != ' ') ){
             count++;
-            if (current > 0) {
-                current--;
-            }
-            if (current == 0) {
-                return count;
-            }
+            current--;
         }
         return count;
     }
