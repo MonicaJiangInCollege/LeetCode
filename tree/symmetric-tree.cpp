@@ -21,8 +21,8 @@ private:
         else if (left == NULL || right == NULL) return false;
         else {
             if (left->val != right->val) return false;
-            if (left->left->val != right->right->val) return false;
-            if (left->right->val != right->left->val) return false;
+            if (isMirror(left->left,right->right)==false) return false;
+            if (isMirror(left->right,right->left)==false) return false;
             return true;
         }
     }
