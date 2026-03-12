@@ -20,6 +20,7 @@ public:
             while (end_2 >= 0) {
                 nums1[end_merge] = nums2[end_2];
                 end_2--;
+                end_merge--;
             }
         }
     }
