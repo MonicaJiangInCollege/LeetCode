@@ -8,7 +8,7 @@ public:
         int ans = 0;
         while (left <= right) {
             int mid = left + (right - left) / 2;  // 防止大数直接相加时溢出
-            if ((long long)mid * mid < x) {
+            if ((long long)mid * mid <= x) {
                 ans = mid;
                 left = mid + 1;
             }
