@@ -18,7 +18,7 @@ public:
     }
 
 private:
-    vector<int> inorder(TreeNode* node, vector<int>& res) {
+    void inorder(TreeNode* node, vector<int>& res) {
         if (node == NULL)
             return;
         if (node != NULL) {
