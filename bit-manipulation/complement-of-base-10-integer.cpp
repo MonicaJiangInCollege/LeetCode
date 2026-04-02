@@ -1,27 +1,16 @@
 class Solution {
 public:
     int bitwiseComplement(int n) {
+        // 特殊情况：n == 0，二进制 "0" 的补数是 "1"，即 1
         if (n == 0) return 1;
-        
-        // 1. 将 n 转换为二进制字符串（不含前导零）
-        string binary = "";
+        // 构造与 n 二进制位数相同且全为 1 的掩码
+        int mask = 0;
         int temp = n;
-        while (temp > 0) {
-            binary = (temp % 2 == 0 ? "0" : "1") + binary;
-            temp /= 2;
+        while (temp) {
+            mask = (mask << 1) | 1;
+            temp >>= 1;
         }
-        
-        // 2. 翻转每一位
-        for (char &c : binary) {
-            c = (c == '0') ? '1' : '0';
-        }
-        
-        // 3. 将翻转后的二进制字符串转回整数
-        int result = 0;
-        for (char c : binary) {
-            result = result * 2 + (c - '0');
-        }
-        
-        return result;
+        // 异或得到按位取反的结果
+        return n ^ mask;
     }
 };
